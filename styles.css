@@ -1,0 +1,249 @@
+/* FlowState — Obsidian-native styling using only CSS variables */
+
+.flowstate-container {
+	padding: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Header / Quick-add */
+.flowstate-header {
+	padding: 8px 12px;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.flowstate-add-row {
+	display: flex;
+	gap: 6px;
+	margin-bottom: 6px;
+}
+
+.flowstate-add-input {
+	flex: 1;
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	padding: 6px 10px;
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+}
+
+.flowstate-add-input:focus {
+	border-color: var(--interactive-accent);
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(var(--interactive-accent-rgb), 0.2);
+}
+
+.flowstate-add-btn {
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border: none;
+	border-radius: 4px;
+	padding: 6px 14px;
+	font-size: var(--font-ui-small);
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.flowstate-add-btn:hover {
+	background: var(--interactive-accent-hover);
+}
+
+.flowstate-actions {
+	display: flex;
+	gap: 4px;
+	justify-content: flex-end;
+}
+
+.flowstate-icon-btn {
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: var(--text-muted);
+	padding: 4px;
+	border-radius: 4px;
+}
+
+.flowstate-icon-btn:hover {
+	color: var(--text-normal);
+	background: var(--background-modifier-hover);
+}
+
+/* Content area */
+.flowstate-content {
+	flex: 1;
+	overflow-y: auto;
+	padding: 4px 0;
+}
+
+/* Sections */
+.flowstate-section {
+	margin-bottom: 2px;
+}
+
+.flowstate-section-header {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 6px 12px;
+	cursor: pointer;
+	user-select: none;
+	font-size: var(--font-ui-smaller);
+	font-weight: 600;
+	color: var(--text-muted);
+	letter-spacing: 0.05em;
+}
+
+.flowstate-section-header:hover {
+	background: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.flowstate-chevron {
+	display: flex;
+	align-items: center;
+	width: 16px;
+	height: 16px;
+}
+
+.flowstate-chevron svg {
+	width: 14px;
+	height: 14px;
+}
+
+.flowstate-section-title {
+	flex: 1;
+}
+
+/* Task rows */
+.flowstate-task-list {
+	padding: 0 4px;
+}
+
+.flowstate-task {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	padding: 5px 8px 5px 12px;
+	border-radius: 4px;
+	transition: opacity 0.2s ease;
+}
+
+.flowstate-task:hover {
+	background: var(--background-modifier-hover);
+}
+
+.flowstate-task-completing {
+	opacity: 0.4;
+	text-decoration: line-through;
+	color: var(--text-muted);
+}
+
+.flowstate-checkbox {
+	margin-top: 3px;
+	flex-shrink: 0;
+	cursor: pointer;
+}
+
+.flowstate-task-body {
+	flex: 1;
+	min-width: 0;
+}
+
+.flowstate-task-text {
+	font-size: var(--font-ui-small);
+	color: var(--text-normal);
+	line-height: 1.4;
+	word-break: break-word;
+}
+
+.flowstate-important {
+	font-size: var(--font-ui-smaller);
+}
+
+/* Meta line */
+.flowstate-task-meta {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	flex-wrap: wrap;
+	margin-top: 2px;
+}
+
+.flowstate-category {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-accent);
+	background: var(--background-secondary);
+	padding: 1px 6px;
+	border-radius: 3px;
+}
+
+.flowstate-priority {
+	font-size: 10px;
+	font-weight: 600;
+	padding: 1px 6px;
+	border-radius: 3px;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+}
+
+.flowstate-priority-3 {
+	color: var(--text-on-accent);
+	background: var(--interactive-accent);
+}
+
+.flowstate-priority-4 {
+	color: var(--text-on-accent);
+	background: var(--color-red, var(--interactive-accent));
+}
+
+.flowstate-energy {
+	font-size: var(--font-ui-smaller);
+}
+
+.flowstate-deadline {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+}
+
+.flowstate-overdue {
+	color: var(--color-red, var(--text-accent));
+	font-weight: 600;
+}
+
+/* States */
+.flowstate-loading,
+.flowstate-empty {
+	padding: 24px 16px;
+	text-align: center;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.flowstate-error {
+	padding: 16px;
+	text-align: center;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.flowstate-error p {
+	margin-bottom: 8px;
+}
+
+.flowstate-setup {
+	padding: 32px 16px;
+	text-align: center;
+}
+
+.flowstate-setup h3 {
+	margin-bottom: 8px;
+	color: var(--text-normal);
+}
+
+.flowstate-setup-text {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	margin-bottom: 16px;
+}

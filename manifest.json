@@ -1,0 +1,9 @@
+{
+	"id": "flowstate-tasks",
+	"name": "FlowState",
+	"version": "1.0.0",
+	"minAppVersion": "1.4.0",
+	"description": "Display your FlowState task management system as a native Obsidian sidebar panel.",
+	"author": "Eric Bartos",
+	"isDesktopOnly": false
+}
