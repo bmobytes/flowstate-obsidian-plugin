@@ -401,14 +401,14 @@ var FlowStateSettingTab = class extends import_obsidian3.PluginSettingTab {
     containerEl.empty();
     new import_obsidian3.Setting(containerEl).setName("FlowState API URL").setDesc("Base URL of your FlowState server").addText(
       (text) => text.setPlaceholder("http://localhost:8000").setValue(this.plugin.settings.apiUrl).onChange(async (value) => {
-        this.plugin.settings.apiUrl = value;
+        this.plugin.settings.apiUrl = value.trim();
         await this.plugin.saveSettings();
       })
     );
     new import_obsidian3.Setting(containerEl).setName("API Key").setDesc("Your FlowState API key").addText((text) => {
       text.inputEl.type = "password";
       text.setPlaceholder("Enter API key").setValue(this.plugin.settings.apiKey).onChange(async (value) => {
-        this.plugin.settings.apiKey = value;
+        this.plugin.settings.apiKey = value.trim();
         await this.plugin.saveSettings();
       });
     });

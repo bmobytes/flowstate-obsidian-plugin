@@ -74,7 +74,7 @@ class FlowStateSettingTab extends PluginSettingTab {
 					.setPlaceholder("http://localhost:8000")
 					.setValue(this.plugin.settings.apiUrl)
 					.onChange(async (value) => {
-						this.plugin.settings.apiUrl = value;
+						this.plugin.settings.apiUrl = value.trim();
 						await this.plugin.saveSettings();
 					})
 			);
@@ -88,7 +88,7 @@ class FlowStateSettingTab extends PluginSettingTab {
 					.setPlaceholder("Enter API key")
 					.setValue(this.plugin.settings.apiKey)
 					.onChange(async (value) => {
-						this.plugin.settings.apiKey = value;
+						this.plugin.settings.apiKey = value.trim();
 						await this.plugin.saveSettings();
 					});
 			});
